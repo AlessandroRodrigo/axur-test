@@ -1,0 +1,24 @@
+.empty-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.empty-feedback__text {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.empty-feedback__icon {
+  opacity: 0.3;
+  margin-bottom: 0.5rem;
+  width: 40px;
+}
+
+.empty-feedback__icon__referal {
+  visibility: hidden;
+}

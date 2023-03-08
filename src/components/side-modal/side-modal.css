@@ -1,0 +1,113 @@
+.side-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  backdrop-filter: blur(3px);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.side-modal__overlay--open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.side-modal {
+  top: 0;
+  right: 0;
+  width: max(300px, 40%);
+  height: 100%;
+  max-height: 100vh;
+  position: fixed;
+  background-color: #1e1e1e;
+  z-index: 101;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-modal--open {
+  transform: translateX(0);
+}
+
+.side-modal__header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-modal__content {
+  margin-top: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.side-modal__content__list {
+  margin-top: 1rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.side-modal__content__list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.side-modal__content__list::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.side-modal__content__list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0.25rem;
+}
+
+.side-modal__content__list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.side-modal__content__list__item__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  padding-inline: 1rem;
+  border-radius: 0.25rem;
+  background-color: #1e1e1e;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.side-modal__content__list__link {
+  flex: 1;
+  /* limit text with ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.side-modal__content__list__item__wrapper:hover {
+  background-color: #444;
+}
+
+.side-modal__content__list__icon {
+  opacity: 0;
+}
+
+.side-modal__content__list__item__wrapper:hover
+  .side-modal__content__list__icon {
+  opacity: 1;
+}

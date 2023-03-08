@@ -1,0 +1,60 @@
+.requisition-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff1a;
+  border: 1px solid #ffffff27;
+  transition: all 0.3s;
+}
+
+.requisition-card--loading {
+  background-color: #ffffff27;
+  animation: variant-opacity-animation 2s infinite;
+}
+
+@keyframes variant-opacity-animation {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.requisition-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.requisition-card__status {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.requisition-card__status--done {
+  color: #00f46e;
+  background-color: #01af4f;
+  padding: 0.25rem 0.75rem;
+  background-color: #01af4f52;
+  border-radius: 100px;
+  border: 1px solid #01af4f;
+}
+
+.requisition-card__status--active {
+  color: #f4f400;
+  background-color: #f4f40052;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid #f4f400;
+}
