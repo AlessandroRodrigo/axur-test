@@ -17,7 +17,7 @@ export function RequisitionCard({ id }: RequisitionCardProps) {
   const requisitionResources = useResources((state) => state.requisition);
   const showToast = useToastController((state) => state.show);
   const [open, setOpen] = useState<boolean>(false);
-  const removeRequistion = useRequisitionStore(
+  const removeRequisition = useRequisitionStore(
     (state) => state.removeRequisition
   );
 
@@ -28,7 +28,7 @@ export function RequisitionCard({ id }: RequisitionCardProps) {
   });
 
   function onRemoveRequisition() {
-    removeRequistion(id);
+    removeRequisition(id);
     showToast({
       title: "Solicitação removida com sucesso",
       description: "A solicitação foi removida com sucesso",
@@ -52,7 +52,9 @@ export function RequisitionCard({ id }: RequisitionCardProps) {
   return (
     <div
       role="requisition-card"
-      className={`requisition-card requisition-card--${requisitionQuery.data?.status}`}
+      className={`requisition-card 
+        ${requisitionQuery.isLoading ? "requisition-card--loading" : ""}
+      `}
     >
       <div
         style={{
