@@ -3,10 +3,10 @@ import "./button.css";
 import { Spinner } from "@/components/spinner";
 
 type ButtonProps = PropsWithChildren<
-  ButtonHTMLAttributes<HTMLButtonElement>
-> & {
-  isLoading?: boolean;
-};
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    isLoading?: boolean;
+  }
+>;
 
 export function Button({ children, isLoading, ...props }: ButtonProps) {
   return (
