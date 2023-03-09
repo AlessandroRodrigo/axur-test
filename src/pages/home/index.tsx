@@ -4,7 +4,7 @@ import { Input } from "@/components/input";
 import { RequisitionCard } from "@/components/requisition-card";
 import { useToastController } from "@/components/toast/toast-controller";
 import { useRequisitionStore } from "@/stores/requisition-store";
-import { useResourcesStore } from "@/stores/resources-store";
+import { useResources } from "@/stores/resources-store";
 import { IconSearch } from "@tabler/icons-react";
 import { useMutation } from "react-query";
 import { useZorm } from "react-zorm";
@@ -20,7 +20,7 @@ const FormScheme = z.object({
 });
 
 export function HomePage() {
-  const requisitionResources = useResourcesStore((state) => state.requisition);
+  const requisitionResources = useResources((state) => state.requisition);
   const showToast = useToastController((state) => state.show);
   const requisitionStore = useRequisitionStore((state) => state, shallow);
 
@@ -63,7 +63,7 @@ export function HomePage() {
 
   return (
     <div className="screen">
-      <div className="container">
+      <div className="screen__container">
         <div className="screen__form__wrapper">
           <h1 className="screen__title">Registrar nova solicitação</h1>
           <form className="screen__form" ref={formController.ref}>

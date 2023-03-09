@@ -1,6 +1,6 @@
 import { Button } from "@/components/button";
 import { useRequisitionStore } from "@/stores/requisition-store";
-import { useResourcesStore } from "@/stores/resources-store";
+import { useResources } from "@/stores/resources-store";
 import { IconTrash } from "@tabler/icons-react";
 import { useQuery } from "react-query";
 import "./requisition-card.css";
@@ -14,7 +14,7 @@ type RequisitionCardProps = {
 };
 
 export function RequisitionCard({ id }: RequisitionCardProps) {
-  const requisitionResources = useResourcesStore((state) => state.requisition);
+  const requisitionResources = useResources((state) => state.requisition);
   const showToast = useToastController((state) => state.show);
   const [open, setOpen] = useState<boolean>(false);
   const removeRequistion = useRequisitionStore(

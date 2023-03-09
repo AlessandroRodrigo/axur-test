@@ -5,6 +5,6 @@ type ResourcesStore = {
   requisition: typeof RequisitionResources;
 };
 
-export const useResourcesStore = create<ResourcesStore>(() => ({
+export const useResources = create<ResourcesStore>(() => ({
   requisition: RequisitionResources,
 }));

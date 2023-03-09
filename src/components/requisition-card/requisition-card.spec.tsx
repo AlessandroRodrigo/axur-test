@@ -1,13 +1,13 @@
 import { describe, it, expect, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { useRequisitionStore } from "@/stores/requisition-store";
-import { useResourcesStore } from "@/stores/resources-store";
+import { useResources } from "@/stores/resources-store";
 import { renderWithProviders } from "src/__tests__/renderWithProviders";
 import { RequisitionCard } from "@/components/requisition-card";
 import { screen } from "@testing-library/react";
 import { useToastController } from "@/components/toast/toast-controller";
 
-const requisitionResources = useResourcesStore.getState().requisition;
+const requisitionResources = useResources.getState().requisition;
 
 vi.spyOn(requisitionResources, "getRequisitionStatus");
 
