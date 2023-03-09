@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import { Toast } from "@/components/toast";
+import "./global.css";
 
 const queryClient = new QueryClient();
 
